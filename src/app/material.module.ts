@@ -5,8 +5,12 @@ import {
   MatSliderModule,
   MatIconModule,
   MatToolbarModule,
-  MatCardModule
+  MatCardModule,
+  MatExpansionModule,
+  MatTableModule,
 } from "@angular/material";
+
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const modules = [
   MatButtonModule,
@@ -14,7 +18,10 @@ const modules = [
   MatSliderModule,
   MatIconModule,
   MatToolbarModule,
-  MatCardModule
+  MatCardModule,
+  MatGridListModule,
+  MatExpansionModule,
+  MatTableModule,
 ];
 
 @NgModule({
