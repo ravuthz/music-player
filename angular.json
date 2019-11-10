@@ -124,6 +124,13 @@
               "devServerTarget": "music-player:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "branch": "master",
+            "repo": "git@github.com:ravuthz/ravuthz.github.io.git"
+          }
         }
       }
     }
