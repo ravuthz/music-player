@@ -16,6 +16,10 @@ import { AlbumListComponent } from './albums/album-list/album-list.component';
 import { AlbumShowComponent } from './albums/album-show/album-show.component';
 import { RepositoryService } from './shared/repository.service';
 import { AlbumFormDialogComponent } from './albums/album-form-dialog/album-form-dialog.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,7 @@ import { AlbumFormDialogComponent } from './albums/album-form-dialog/album-form-
     AlbumListComponent,
     AlbumShowComponent,
     AlbumFormDialogComponent,
+    DataTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +42,9 @@ import { AlbumFormDialogComponent } from './albums/album-form-dialog/album-form-
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   entryComponents: [
     AlbumFormDialogComponent
