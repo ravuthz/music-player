@@ -1,0 +1,14 @@
+<p>album-show works!</p>
+<div *ngIf="album">
+  <div>
+    <label>Id: </label> {{album.id}}
+  </div>
+  <div>
+    <label>Name: </label> {{album.name}}
+  </div>
+  <div>
+    <label>Image: </label> {{album.image}}
+  </div>
+  <span class="button is-small btn-danger" (click)='delete()'>Delete</span>
+  <hr />
+</div>

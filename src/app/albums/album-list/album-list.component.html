@@ -1,0 +1,48 @@
+<h1>Albums</h1>
+<div>
+  <mat-form-field>
+    <input matInput (keyup)="onFilterEvent($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+
+  <mat-toolbar color="basic">
+    <mat-toolbar-row>
+      <button mat-raised-button color="primary" type="button" (click)="openDialog('Add', {})">
+        <mat-icon>add_box</mat-icon>&nbsp;Add New Album
+      </button>
+      <span class="toolbar-spacer"></span>
+      <mat-form-field>
+        <input class="toobar-search-box" matInput (keyup)="onFilterEvent($event.target.value)" placeholder="Filter">
+      </mat-form-field>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element" class="action-link">
+        <a mat-icon-button color="primary" (click)="openDialog('Edit', element)">
+          <mat-icon>edit</mat-icon>
+        </a>
+        <a mat-icon-button color="warn" (click)="openDialog('Delete', element)">
+          <mat-icon>delete_forever</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+  <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    (page)="pageEvent = onPageEvent($event)">
+  </mat-paginator>
+</div>

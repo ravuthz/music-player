@@ -7,10 +7,21 @@
     <span class="menu-spacer"></span>
     <span class="example-spacer"></span>
     <div>
-      <a mat-button [routerLink]="'/'"> Home </a>
-      <a mat-button [routerLink]="'/about'"> About </a>
-      <a mat-button [routerLink]="'/contact'"> Contact </a>
-      <a mat-button [routerLink]="'/music-player'"> Music Player </a>
+      <a mat-button [routerLink]="'/'">
+        <mat-icon>home</mat-icon>&nbsp;Home
+      </a>
+      <a mat-button [routerLink]="'/about'">
+        <mat-icon>perm_contact_calendar</mat-icon>&nbsp;About
+      </a>
+      <a mat-button [routerLink]="'/contact'">
+        <mat-icon>perm_phone_msg</mat-icon>&nbsp;Contact
+      </a>
+      <a mat-button [routerLink]="'/music-player'">
+        <mat-icon>music_video</mat-icon>&nbsp;Music Player
+      </a>
+      <a mat-button [routerLink]="'/albums'">
+        <mat-icon>album</mat-icon>&nbsp;Albums
+      </a>
     </div>
     <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
   </mat-toolbar-row>

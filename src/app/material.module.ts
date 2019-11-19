@@ -1,32 +1,63 @@
 import { NgModule } from '@angular/core';
 import {
   MatButtonModule,
-  MatListModule,
-  MatSliderModule,
-  MatIconModule,
   MatToolbarModule,
+  MatIconModule,
+  MatBadgeModule,
+  MatSidenavModule,
+  MatSliderModule,
   MatCardModule,
   MatExpansionModule,
+  MatListModule,
+  MatGridListModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatChipsModule,
+  MatTooltipModule,
   MatTableModule,
-} from "@angular/material";
-
-import { MatGridListModule } from '@angular/material/grid-list';
+  MatPaginatorModule,
+  MatDialogModule,
+  MatSnackBarModule,
+} from '@angular/material';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 
 const modules = [
   MatButtonModule,
-  MatListModule,
-  MatSliderModule,
-  MatIconModule,
   MatToolbarModule,
+  MatIconModule,
+  MatBadgeModule,
+  MatSidenavModule,
+  MatSliderModule,
   MatCardModule,
-  MatGridListModule,
   MatExpansionModule,
+  MatListModule,
+  MatGridListModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatRadioModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatChipsModule,
+  MatTooltipModule,
   MatTableModule,
+  MatPaginatorModule,
+  MaterialFileInputModule,
+  MatDialogModule,
+  MatSnackBarModule
 ];
+
 
 @NgModule({
   declarations: [],
   imports: modules,
-  exports: modules
+  exports: modules,
+  providers: [
+    MatDatepickerModule
+  ]
 })
 export class MaterialModule { }

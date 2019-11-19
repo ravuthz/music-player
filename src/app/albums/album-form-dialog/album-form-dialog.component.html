@@ -1,0 +1,38 @@
+<form [formGroup]="albumForm" autocomplete="off" novalidate (ngSubmit)="onSubmit(albumForm.value)"
+  fxLayout="column wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
+
+  <h1 mat-dialog-title><strong>{{ albumFormTitle }}</strong></h1>
+
+  <div mat-dialog-content>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Name" formControlName="name" id="name"
+        [readonly]="albumFormAction == 'Delete'">
+      <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+      <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+      <mat-error *ngIf="hasError('name', 'maxlength')">You have more than 60 characters</mat-error>
+    </mat-form-field>
+
+    <div class="imagePreview" *ngIf="oldImage && oldImage !== ''">
+      <img width="100%" [src]="oldImage" [alt]="oldImage">
+    </div>
+
+    <mat-form-field *ngIf="albumFormAction != 'Delete'">
+      <ngx-mat-file-input multiple="false" accept="image/*" placeholder="Image" formControlName="image" id="image"
+        (change)="onFileChange($event)">
+      </ngx-mat-file-input>
+      <mat-icon matSuffix>folder</mat-icon>
+      <mat-hint align="end">Only image are allow.</mat-hint>
+      <mat-error *ngIf="hasError('image', 'required')">Image is required</mat-error>
+      <mat-error *ngIf="hasError('image', 'maxContentSize')">You have only 100M for image size</mat-error>
+    </mat-form-field>
+
+    <div class="form-footer">
+      <button mat-raised-button [color]="albumFormAction != 'Delete' ? 'primary' : 'warn'"
+        [disabled]="!albumForm.valid">{{ albumFormButtonTitle }}</button>
+      <button type="button" mat-raised-button color="basic" (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+
+
+
+</form>
